@@ -22,7 +22,7 @@ export const syncAlgoliaProductsWorkflow = createWorkflow(
     retentionTime: 86400, // 24 hours
   },
   function ({ limit, offset }: SyncProductsWorkflowInput) {
-    console.log('[Workflow] syncProductsWorkflow START', { limit, offset })
+    // console.log('[Workflow] syncProductsWorkflow START', { limit, offset })
     
     try {
       const result: any = useQueryGraphStep({
@@ -39,15 +39,15 @@ export const syncAlgoliaProductsWorkflow = createWorkflow(
 
       const { data, metadata } = result
       
-      console.log('[Workflow] Found products to sync:', { 
-        count: data?.length || 0, 
-        total: metadata?.count || 0,
-        offset: offset || 0,
-        limit: limit || 100
-      })
+      // console.log('[Workflow] Found products to sync:', { 
+      //   count: data?.length || 0, 
+      //   total: metadata?.count || 0,
+      //   offset: offset || 0,
+      //   limit: limit || 100
+      // })
 
       if (!data || data.length === 0) {
-        console.log('[Workflow] No products found to sync')
+        // console.log('[Workflow] No products found to sync')
         return new WorkflowResponse<SyncProductsWorkflowOutput>({
           products: [],
           metadata,
@@ -67,14 +67,14 @@ export const syncAlgoliaProductsWorkflow = createWorkflow(
         success: true,
       }
       
-      console.log('[Workflow] syncProductsWorkflow SUCCESS', {
-        syncedCount: output.syncedCount,
-        totalProducts: metadata?.count || 0
-      })
+      // console.log('[Workflow] syncProductsWorkflow SUCCESS', {
+      //   syncedCount: output.syncedCount,
+      //   totalProducts: metadata?.count || 0
+      // })
       
       return new WorkflowResponse<SyncProductsWorkflowOutput>(output)
     } catch (error) {
-      console.error('[Workflow] syncProductsWorkflow ERROR', error)
+      // console.error('[Workflow] syncProductsWorkflow ERROR', error)
       
       return new WorkflowResponse<SyncProductsWorkflowOutput>({
         products: [],

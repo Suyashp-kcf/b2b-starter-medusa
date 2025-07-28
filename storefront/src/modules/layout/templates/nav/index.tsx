@@ -13,6 +13,7 @@ import SkeletonCartButton from "@/modules/skeletons/components/skeleton-cart-but
 import SkeletonMegaMenu from "@/modules/skeletons/components/skeleton-mega-menu"
 import { Suspense } from "react"
 import SearchModal from "@/modules/search/components/modal"
+import IndustryMenu from "@/modules/layout/components/industry-menu"
 
 export async function NavigationHeader() {
   const customer = await retrieveCustomer().catch(() => null)
@@ -32,7 +33,7 @@ export async function NavigationHeader() {
             </LocalizedClientLink>
 
             <nav>
-              <ul className="space-x-4 hidden small:flex">
+              <ul className="space-x-4 hidden small:flex items-center">
                 <li>
                   <Suspense fallback={<SkeletonMegaMenu />}>
                     <MegaMenuWrapper />
@@ -53,6 +54,17 @@ export async function NavigationHeader() {
                   >
                     Design Studio
                   </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    className="hover:text-ui-fg-base hover:bg-neutral-100 rounded-full px-3 py-2"
+                    href="/closeouts"
+                  >
+                    Closeouts
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <IndustryMenu />
                 </li>
               </ul>
             </nav>

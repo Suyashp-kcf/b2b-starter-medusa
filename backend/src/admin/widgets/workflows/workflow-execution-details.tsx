@@ -2,7 +2,7 @@ import { defineWidgetConfig } from "@medusajs/admin-sdk"
 import { DetailWidgetProps } from "@medusajs/framework/types"
 import { clx, Container, Heading, Text } from "@medusajs/ui"
 import { useQuery } from "@tanstack/react-query"
-import { sdk } from "../lib/sdk"
+import { sdk } from "../../lib/sdk"
 
 type WorkflowExecution = {
   id: string

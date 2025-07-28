@@ -37,6 +37,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "github.com",
       },
+      {
+        protocol: "https",
+        hostname: "ynbzzunpeyfiatdhpav.supabase.co",
+      },
+      {
+        protocol: "https",
+        hostname: "www.kc-store-fixtures.com",
+      },
     ],
   },
 }

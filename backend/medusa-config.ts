@@ -5,18 +5,13 @@ import { BRAND_MODULE } from "./src/modules/brand";
 import { ALGOLIA_MODULE } from "./src/modules/algolia";
 import { NETSUITE_MODULE } from "./src/modules/netsuite";
 
-import { loadEnv, defineConfig, Modules } from "@medusajs/framework/utils";
+import { loadEnv, defineConfig, Modules, ContainerRegistrationKeys } from "@medusajs/framework/utils";
 import {
   MINIO_ACCESS_KEY,
   MINIO_BUCKET,
   MINIO_ENDPOINT,
   MINIO_SECRET_KEY,
-  STRIPE_API_KEY,
-  STRIPE_WEBHOOK_SECRET,
   BACKEND_URL,
-  REDIS_URL,
-  // SENDGRID_API_KEY,
-  // SENDGRID_FROM_EMAIL,
   RESEND_API_KEY,
   RESEND_FROM_EMAIL,
   MEILISEARCH_HOST,
